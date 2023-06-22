@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "127931146811",
+    "firebase_url": "https://imageupload-18e99-default-rtdb.firebaseio.com",
+    "project_id": "imageupload-18e99",
+    "storage_bucket": "imageupload-18e99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127931146811:android:46f89b4a3cc346b2c4321e",
+        "android_client_info": {
+          "package_name": "com.po.ballguru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127931146811-nb8abnc31scd36js1aou99gdtr5he8bc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgdXC5f2ic-7g2rOG5UPm0ei62FKCswEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127931146811-nb8abnc31scd36js1aou99gdtr5he8bc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

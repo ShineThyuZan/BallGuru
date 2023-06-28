@@ -24,7 +24,6 @@ import androidx.navigation.NavController
 import com.po.ballguru.R
 import com.po.ballguru.ui.theme.common.NewsDataState
 import com.po.ballguru.ui.theme.resources.dimen
-import com.po.ballguru.ui.theme.screen.home.ShowNewsLazyList
 import com.po.ballguru.ui.theme.viewmodel.NewsInfoViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)

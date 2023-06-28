@@ -71,7 +71,7 @@ fun BrandingView(
                     modifier = modifier
                         .size(MaterialTheme.dimen.large)
                         .alpha(alpha = alpha),
-                    painter = painterResource(id = R.drawable.logo),
+                    painter = painterResource(id = R.drawable.football),
                     contentDescription = "Logo Icon",
                 )
             }

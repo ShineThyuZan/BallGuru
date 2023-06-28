@@ -1,5 +1,6 @@
 package com.po.ballguru.ui.theme.screen.news
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,10 +18,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
@@ -108,8 +111,8 @@ fun CardNewsItem(news: NewsVo) {
         Column(modifier = Modifier.padding(MaterialTheme.dimen.base)) {
             Text(
                 text = news.title!!,
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = MaterialTheme.typography.titleLarge,
+                color = Color.Black,
                 maxLines = 3,
             )
             VerticalSpacerBase()
@@ -120,10 +123,17 @@ fun CardNewsItem(news: NewsVo) {
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 1,
             )
+            Text(
+                modifier = Modifier.padding(start = MaterialTheme.dimen.base),
+                text = news.author!!,
+                style = MaterialTheme.typography.bodySmall,
+                color = Color.Blue,
+                maxLines = 1,
+            )
             VerticalSpacerBase2x()
             AsyncImage(
                 modifier = Modifier
-                    .height(160.dp)
+                    .height(280.dp)
                     .fillMaxWidth(),
                 model = news.photo,
                 contentDescription = "news image",
@@ -132,7 +142,7 @@ fun CardNewsItem(news: NewsVo) {
             VerticalSpacerBase2x()
             ClickableText(
                 text = annotatedText,
-                style = (MaterialTheme.typography.bodyMedium.copy(textAlign = TextAlign.Justify)),
+                style = (MaterialTheme.typography.bodyMedium.copy(textAlign = TextAlign.Start)),
                 maxLines = if (isExpanded) Int.MAX_VALUE else 3,
                 onTextLayout = { textLayoutResultState = it },
                 onClick = { offset ->

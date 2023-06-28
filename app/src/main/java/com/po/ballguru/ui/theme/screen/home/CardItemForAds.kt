@@ -1,4 +1,4 @@
-package com.po.ballguru.ui.theme.screen
+package com.po.ballguru.ui.theme.screen.home
 
 import android.content.Intent
 import android.net.Uri

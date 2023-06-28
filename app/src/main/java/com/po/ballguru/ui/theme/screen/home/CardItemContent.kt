@@ -1,4 +1,4 @@
-package com.po.ballguru.ui.theme.screen
+package com.po.ballguru.ui.theme.screen.home
 
 import android.content.Intent
 import android.net.Uri
@@ -23,6 +23,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
@@ -43,7 +44,8 @@ fun CardItemContent(match : MatchInfoVo){
         addStyle(
             style = SpanStyle(
                 color = Color.Blue,
-                textDecoration = TextDecoration.Underline
+                textDecoration = TextDecoration.Underline,
+                fontStyle = FontStyle.Italic
             ),
             start = startIndex,
             end = endIndex

@@ -3,9 +3,10 @@ package com.po.ballguru.ui.theme.graph
 import android.annotation.SuppressLint
 import androidx.navigation.*
 import androidx.navigation.compose.composable
-import com.po.ballguru.ui.theme.screen.HomeScreen
-import com.po.ballguru.ui.theme.screen.NewsScreen
+import com.po.ballguru.ui.theme.screen.home.HomeScreen
+import com.po.ballguru.ui.theme.screen.news.NewsScreen
 import com.po.ballguru.ui.theme.viewmodel.MatchInfoViewModel
+import com.po.ballguru.ui.theme.viewmodel.NewsInfoViewModel
 
 
 @SuppressLint("UnrememberedGetBackStackEntry")
@@ -25,7 +26,9 @@ fun NavGraphBuilder.navGraph(
         composable(
             route = Destination.News.route,
         ) {
-            NewsScreen(navController = navController)
+            NewsScreen(navController = navController,
+            viewModel = NewsInfoViewModel()
+            )
         }
     }
 }

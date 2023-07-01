@@ -29,4 +29,5 @@
 <div style="display: flex; justify-content: center; padding: 100px; ">
 <img src="https://github.com/ShineThyuZan/BallGuru/blob/master/app/src/main/res/drawable-v24/screen1.jpg" alt="Live Match Screenshot" width="200" height="380">
 <img src="https://github.com/ShineThyuZan/BallGuru/blob/master/app/src/main/res/drawable-v24/screen2.jpg" alt="Football News Screenshot" width="200" height="380">
+  <img src="https://github.com/ShineThyuZan/BallGuru/blob/master/app/src/main/res/drawable-v24/screen3.jpg" alt="Football News Screenshot2" width="200" height="380">
 </div>

@@ -32,7 +32,6 @@ import com.po.ballguru.R
 import com.po.ballguru.ui.theme.common.HorizontalSpacerBase2x
 import com.po.ballguru.ui.theme.common.MatchInfoVo
 import com.po.ballguru.ui.theme.resources.dimen
-
 @Composable
 fun CardItemContent(match : MatchInfoVo){
     val context = LocalContext.current

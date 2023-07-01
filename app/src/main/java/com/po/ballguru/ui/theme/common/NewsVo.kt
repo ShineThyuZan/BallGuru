@@ -1,5 +1,4 @@
 package com.po.ballguru.ui.theme.common
-
 data class NewsVo(
     val title: String? = null,
     val content: String? = null,

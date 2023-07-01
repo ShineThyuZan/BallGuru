@@ -15,11 +15,9 @@ import javax.inject.Inject
 @HiltViewModel
 class NewsInfoViewModel @Inject constructor() : ViewModel() {
     val response: MutableState<NewsDataState> = mutableStateOf(NewsDataState.Empty)
-
     init {
         fetchNewsDataFormFireBase()
     }
-
     private fun fetchNewsDataFormFireBase() {
         val tempList = mutableListOf<NewsVo>()
         response.value = NewsDataState.Loading

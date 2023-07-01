@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.po.ballguru.ui.theme.screen.SplashScreen
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

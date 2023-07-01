@@ -23,7 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.po.ballguru.R
-import com.po.ballguru.ui.theme.common.DataState
+import com.po.ballguru.ui.theme.common.MatchesDataState
 import com.po.ballguru.ui.theme.graph.Destination
 import com.po.ballguru.ui.theme.resources.dimen
 import com.po.ballguru.ui.theme.viewmodel.MatchInfoViewModel
@@ -89,7 +89,7 @@ fun HomeScreen(
 @Composable
 fun SetFireBaseData(viewModel: MatchInfoViewModel) {
     when (val result = viewModel.response.value) {
-        DataState.Empty -> {
+        MatchesDataState.Empty -> {
             Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
@@ -98,7 +98,7 @@ fun SetFireBaseData(viewModel: MatchInfoViewModel) {
             }
         }
 
-        is DataState.Failure -> {
+        is MatchesDataState.Failure -> {
             Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
@@ -107,7 +107,7 @@ fun SetFireBaseData(viewModel: MatchInfoViewModel) {
             }
         }
 
-        DataState.Loading -> {
+        MatchesDataState.Loading -> {
             Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
@@ -116,7 +116,7 @@ fun SetFireBaseData(viewModel: MatchInfoViewModel) {
             }
         }
 
-        is DataState.Success -> {
+        is MatchesDataState.Success -> {
             ShowLazyList(result.data)
         }
     }

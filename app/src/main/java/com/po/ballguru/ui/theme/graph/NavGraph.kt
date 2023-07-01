@@ -7,8 +7,6 @@ import com.po.ballguru.ui.theme.screen.home.HomeScreen
 import com.po.ballguru.ui.theme.screen.news.NewsScreen
 import com.po.ballguru.ui.theme.viewmodel.MatchInfoViewModel
 import com.po.ballguru.ui.theme.viewmodel.NewsInfoViewModel
-
-
 @SuppressLint("UnrememberedGetBackStackEntry")
 fun NavGraphBuilder.navGraph(
     navController: NavController

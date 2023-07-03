@@ -8,7 +8,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 data class BallGuruSizing(
-
     val tiny: Dp = 2.dp,
     val small: Dp = 4.dp,
 

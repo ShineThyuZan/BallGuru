@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.po.ballguru.ui.theme.screen.SplashAnimatedScreen
+import com.po.ballguru.ui.theme.screen.SplashLottieScreen
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -20,7 +20,8 @@ fun RootNavGraph(
     ) {
         composable(route = Destination.Splash.route) {
             // SplashScreen(navController = navController)
-            SplashAnimatedScreen(navController = navController)
+            // SplashAnimatedScreen(navController = navController)
+            SplashLottieScreen(navController = navController)
         }
         navGraph(navController = navController)
     }

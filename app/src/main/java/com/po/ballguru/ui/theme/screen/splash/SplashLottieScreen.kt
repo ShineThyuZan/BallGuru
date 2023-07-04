@@ -1,4 +1,4 @@
-package com.po.ballguru.ui.theme.screen
+package com.po.ballguru.ui.theme.screen.splash
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

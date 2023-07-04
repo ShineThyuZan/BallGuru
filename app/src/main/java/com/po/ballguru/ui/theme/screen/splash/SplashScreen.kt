@@ -1,4 +1,4 @@
-package com.po.ballguru.ui.theme.screen
+package com.po.ballguru.ui.theme.screen.splash
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -12,7 +12,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import com.po.ballguru.ui.theme.graph.Routes
 import kotlinx.coroutines.delay
-
 @Composable
 fun SplashScreen(
     navController: NavController,

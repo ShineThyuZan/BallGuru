@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.po.ballguru.ui.theme.common.MatchInfoVo
 import com.po.ballguru.ui.theme.resources.dimen
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CardItem(match: MatchInfoVo) {

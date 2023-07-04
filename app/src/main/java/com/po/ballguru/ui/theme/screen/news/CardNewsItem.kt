@@ -32,7 +32,6 @@ import com.po.ballguru.ui.theme.common.SheetHeader
 import com.po.ballguru.ui.theme.common.VerticalSpacerBase
 import com.po.ballguru.ui.theme.common.VerticalSpacerBase2x
 import com.po.ballguru.ui.theme.resources.dimen
-
 @Composable
 fun CardNewsItem(news: NewsVo) {
     var isExpanded by remember { mutableStateOf(value = false) }

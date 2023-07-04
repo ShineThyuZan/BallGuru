@@ -1,4 +1,4 @@
-package com.po.ballguru.ui.theme.screen
+package com.po.ballguru.ui.theme.screen.splash
 
 import android.view.animation.OvershootInterpolator
 import androidx.compose.animation.core.Animatable
@@ -69,9 +69,7 @@ fun SplashAnimatedScreen(navController: NavController) {
                     color = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.scale(scale = scale.value)
                 )
-
             }
-
         }
     }
 }

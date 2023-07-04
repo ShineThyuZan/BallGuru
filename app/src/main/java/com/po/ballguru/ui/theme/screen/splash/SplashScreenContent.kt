@@ -1,4 +1,4 @@
-package com.po.ballguru.ui.theme.screen
+package com.po.ballguru.ui.theme.screen.splash
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,7 +16,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.po.ballguru.R
 import com.po.ballguru.ui.theme.resources.dimen
-
 @Composable
 fun SplashScreenContent(
     alpha: Float,

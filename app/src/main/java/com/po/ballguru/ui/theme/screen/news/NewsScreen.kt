@@ -25,7 +25,6 @@ import com.po.ballguru.R
 import com.po.ballguru.ui.theme.common.NewsDataState
 import com.po.ballguru.ui.theme.resources.dimen
 import com.po.ballguru.ui.theme.viewmodel.NewsInfoViewModel
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewsScreen(
@@ -90,7 +89,6 @@ fun SetFireBaseData(viewModel: NewsInfoViewModel) {
                 Text(text = "Error")
             }
         }
-
         is NewsDataState.Failure -> {
             Box(
                 modifier = Modifier.fillMaxSize(),
@@ -99,7 +97,6 @@ fun SetFireBaseData(viewModel: NewsInfoViewModel) {
                 Text(text = result.message)
             }
         }
-
         NewsDataState.Loading -> {
             Box(
                 modifier = Modifier.fillMaxSize(),
@@ -108,7 +105,6 @@ fun SetFireBaseData(viewModel: NewsInfoViewModel) {
                 CircularProgressIndicator()
             }
         }
-
         is NewsDataState.Success -> {
             ShowNewsLazyList(result.data)
         }

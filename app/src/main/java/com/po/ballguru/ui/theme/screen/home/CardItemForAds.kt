@@ -15,6 +15,7 @@ import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,6 +26,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.content.ContextCompat
 import com.po.ballguru.R
 import com.po.ballguru.ui.theme.resources.dimen
@@ -92,5 +94,13 @@ fun CardItemForAds() {
                 )
             }
         }
+    }
+}
+
+@Composable
+@Preview
+private fun CardItemForAdsPreview() {
+    Surface {
+        CardItemForAds()
     }
 }

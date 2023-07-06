@@ -31,6 +31,10 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.po.ballguru.R
 import com.po.ballguru.ui.theme.common.HorizontalSpacerBase2x
 import com.po.ballguru.ui.theme.common.MatchInfoVo
@@ -40,10 +44,10 @@ import com.po.ballguru.ui.theme.resources.dimen
 fun CardItemContent(match: MatchInfoVo) {
     val context = LocalContext.current
     val matchLink = buildAnnotatedString {
-        val str = "Watch Now"
+        val watchNowStr = "Watch Now"
         val startIndex = 0
         val endIndex = startIndex + 9
-        append(str)
+        append(watchNowStr)
         addStyle(
             style = SpanStyle(
                 color = Color.Blue,
@@ -157,6 +161,8 @@ fun CardItemContent(match: MatchInfoVo) {
         }
     }
 }
+
+
 
 @Composable
 @Preview(showBackground = true)

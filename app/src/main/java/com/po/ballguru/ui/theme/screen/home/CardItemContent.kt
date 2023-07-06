@@ -9,11 +9,13 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,14 +28,16 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.po.ballguru.R
 import com.po.ballguru.ui.theme.common.HorizontalSpacerBase2x
 import com.po.ballguru.ui.theme.common.MatchInfoVo
 import com.po.ballguru.ui.theme.resources.dimen
+
 @Composable
-fun CardItemContent(match : MatchInfoVo){
+fun CardItemContent(match: MatchInfoVo) {
     val context = LocalContext.current
     val matchLink = buildAnnotatedString {
         val str = "Watch Now"
@@ -81,7 +85,7 @@ fun CardItemContent(match : MatchInfoVo){
                 maxLines = 2,
             )
             HorizontalSpacerBase2x()
-            Text(text = "Vs",)
+            Text(text = "Vs")
             HorizontalSpacerBase2x()
             Text(
                 modifier = Modifier.width(120.dp),
@@ -151,5 +155,25 @@ fun CardItemContent(match : MatchInfoVo){
                 textAlign = TextAlign.End
             )
         }
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun CardItemContentPreview() {
+    Surface(modifier = Modifier
+        .fillMaxWidth()
+        .height(200.dp)) {
+        CardItemContent(
+            match = MatchInfoVo(
+                "Premier League",
+                first_team = "Red Team",
+                second_team = "Blue Team",
+                link = "http://myanmar.ict.com",
+                quality = "480hd",
+                match_time = "8:30pm",
+                prediction = "3:3"
+            )
+        )
     }
 }

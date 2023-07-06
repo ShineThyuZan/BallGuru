@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.po.ballguru.ui.theme.resources.dimen
-
 @Composable
 fun SheetHeader(
     modifier: Modifier = Modifier,

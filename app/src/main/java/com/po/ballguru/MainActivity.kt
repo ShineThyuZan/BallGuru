@@ -11,7 +11,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.po.ballguru.ui.theme.resources.BallGuruTheme
-import com.po.ballguru.ui.theme.graph.MainScreen
+import com.po.ballguru.ui.theme.screen.MainScreen
 
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)

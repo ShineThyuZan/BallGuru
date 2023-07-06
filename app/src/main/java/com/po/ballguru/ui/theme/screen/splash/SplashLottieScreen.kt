@@ -19,7 +19,6 @@ import com.po.ballguru.R
 import com.po.ballguru.ui.theme.graph.Routes
 import kotlinx.coroutines.delay
 
-
 @Composable
 fun SplashLottieScreen(
     navController: NavController,

@@ -14,8 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import com.po.ballguru.R
 import com.po.ballguru.ui.theme.resources.dimen
+import com.po.ballguru.R
+
 @Composable
 fun SplashScreenContent(
     alpha: Float,

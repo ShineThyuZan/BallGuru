@@ -12,7 +12,6 @@ fun ShowLazyList(matches: MutableList<MatchInfoVo>) {
     LazyColumn {
         items(matches) { match ->
             CardItem(match = match)
-            BannerAds(modifier = Modifier.fillMaxWidth())
         }
     }
 }

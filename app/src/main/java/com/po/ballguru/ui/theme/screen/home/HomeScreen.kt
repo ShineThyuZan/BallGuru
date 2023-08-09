@@ -54,8 +54,8 @@ fun HomeScreen(
                         modifier = Modifier
                             .padding(end = MaterialTheme.dimen.base)
                             .clickable {
+                                navController.navigate(Destination.News.route)
 
-                            navController.navigate(Destination.News.route)
                             },
                         text = "News",
                     )
@@ -80,10 +80,24 @@ fun HomeScreen(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(bottom = MaterialTheme.dimen.base_3x)
+                    .padding(bottom = MaterialTheme.dimen.base_2x)
             ) {
-                CardItemForAds()
-                SetFireBaseData(viewModel)
+                Box(
+                    Modifier
+                        .fillMaxWidth()
+                        .weight(2f)) {
+                    CardItemForAds()
+                }
+                Box(
+                    Modifier
+                        .fillMaxWidth()
+                        .weight(14f)) {
+                    SetFireBaseData(viewModel)
+                }
+                BannerAds(modifier = Modifier
+                    .padding(MaterialTheme.dimen.base)
+                    .fillMaxWidth()
+                    .weight(2f))
             }
         }
     }

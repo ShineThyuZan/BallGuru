@@ -51,7 +51,7 @@ fun CardItemForAds() {
         )
         addStringAnnotation(
             tag = "URL",
-            annotation = "https://shop.com.mm",
+            annotation = "https://t.me/sportingbird/2",
             start = startIndex,
             end = endIndex,
         )

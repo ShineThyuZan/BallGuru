@@ -1,60 +1,54 @@
 package com.po.ballguru.ui.theme.screen.home
 
-import android.app.Activity
-import android.content.Context
-import android.content.ContextWrapper
-import com.google.android.gms.ads.AdError
+import androidx.activity.ComponentActivity
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 
-var mInterstitialAd: InterstitialAd? = null
+@Composable
+fun InterstitialAdScreen(activity: ComponentActivity) {
+    var interstitialAd by remember { mutableStateOf<InterstitialAd?>(null) }
+    var adLoaded by remember { mutableStateOf(false) }
 
-fun loadInterstitial(context: Context) {
-    InterstitialAd.load(
-        context,
-        "ca-app-pub-6403106238282709/3313848140", //Change this with your own AdUnitID!
-        AdRequest.Builder().build(),
-        object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-                mInterstitialAd = null
+    // Load the interstitial ad
+    LaunchedEffect(Unit) {
+        InterstitialAd.load(
+            activity,
+            "ca-app-pub-3940256099942544/1033173712", // Test ad unit ID
+            AdRequest.Builder().build(),
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(ad: InterstitialAd) {
+                    super.onAdLoaded(ad)
+                    interstitialAd = ad
+                    adLoaded = true
+                }
             }
+        )
+    }
 
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                mInterstitialAd = interstitialAd
+    MaterialTheme {
+        Column {
+            if (adLoaded && interstitialAd != null) {
+                Button(
+                    onClick = {
+                        interstitialAd?.show(activity)
+                    },
+                    content = {
+                        Text("Show Interstitial Ad")
+                    }
+                )
             }
         }
-    )
-}
-
-fun showInterstitial(context: Context, onAdDismissed: () -> Unit) {
-    val activity = context.findActivity()
-
-    if (mInterstitialAd != null && activity != null) {
-        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-            override fun onAdFailedToShowFullScreenContent(e: AdError) {
-                mInterstitialAd = null
-            }
-
-            override fun onAdDismissedFullScreenContent() {
-                mInterstitialAd = null
-
-                loadInterstitial(context)
-                onAdDismissed()
-            }
-        }
-        mInterstitialAd?.show(activity)
     }
 }
 
-fun removeInterstitial() {
-    mInterstitialAd?.fullScreenContentCallback = null
-    mInterstitialAd = null
-}
-fun Context.findActivity(): Activity? = when (this) {
-    is Activity -> this
-    is ContextWrapper -> baseContext.findActivity()
-    else -> null
-}

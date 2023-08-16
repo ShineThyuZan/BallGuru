@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.ClickableText
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -84,12 +85,16 @@ fun CardItemContent(match: MatchInfoVo) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                modifier = Modifier.width(120.dp),
+                modifier = Modifier,
                 text = match.first_team!!,
                 maxLines = 2,
             )
             HorizontalSpacerBase2x()
+            Icon(modifier = Modifier.size(24.dp), painter = painterResource(id = R.drawable.football), contentDescription = "First Team Logo")
+            HorizontalSpacerBase2x()
             Text(text = "Vs")
+            HorizontalSpacerBase2x()
+            Icon(modifier = Modifier.size(24.dp), painter = painterResource(id = R.drawable.football), contentDescription = "First Team Logo")
             HorizontalSpacerBase2x()
             Text(
                 modifier = Modifier.width(120.dp),

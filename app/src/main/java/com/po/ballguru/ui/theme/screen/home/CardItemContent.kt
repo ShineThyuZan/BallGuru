@@ -3,6 +3,7 @@ package com.po.ballguru.ui.theme.screen.home
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,6 +14,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -21,9 +24,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
@@ -32,6 +38,8 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -89,13 +97,46 @@ fun CardItemContent(match: MatchInfoVo) {
                 text = match.first_team!!,
                 maxLines = 2,
             )
+
             HorizontalSpacerBase2x()
-            Icon(modifier = Modifier.size(24.dp), painter = painterResource(id = R.drawable.football), contentDescription = "First Team Logo")
+
+            AsyncImage(
+                modifier = Modifier.size(24.dp),
+                model = match.first_team_logo,
+                contentDescription ="First Team Logo" ,
+                contentScale = ContentScale.Crop,
+            )
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(match.first_team_logo)
+                    .crossfade(true)
+                    .build(),
+                placeholder = painterResource(R.drawable.ic_back),
+                contentDescription = "",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.clip(CircleShape).size(24.dp)
+            )
+
+
             HorizontalSpacerBase2x()
+
             Text(text = "Vs")
+
             HorizontalSpacerBase2x()
-            Icon(modifier = Modifier.size(24.dp), painter = painterResource(id = R.drawable.football), contentDescription = "First Team Logo")
+
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(match.second_team_logo)
+                    .crossfade(true)
+                    .build(),
+                placeholder = painterResource(R.drawable.ic_back),
+                contentDescription = "",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.clip(CircleShape).size(24.dp)
+            )
+
             HorizontalSpacerBase2x()
+
             Text(
                 modifier = Modifier.width(120.dp),
                 maxLines = 2,

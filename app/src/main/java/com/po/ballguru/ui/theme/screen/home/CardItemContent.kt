@@ -93,30 +93,23 @@ fun CardItemContent(match: MatchInfoVo) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                modifier = Modifier,
+                modifier = Modifier.width(120.dp),
                 text = match.first_team!!,
                 maxLines = 2,
+                textAlign = TextAlign.Center
             )
 
             HorizontalSpacerBase2x()
 
             AsyncImage(
-                modifier = Modifier.size(24.dp),
-                model = match.first_team_logo,
-                contentDescription ="First Team Logo" ,
-                contentScale = ContentScale.Crop,
-            )
-            AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
                     .data(match.first_team_logo)
                     .crossfade(true)
                     .build(),
-                placeholder = painterResource(R.drawable.ic_back),
                 contentDescription = "",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.clip(CircleShape).size(24.dp)
+                contentScale = ContentScale.Inside,
+                modifier = Modifier.size(24.dp)
             )
-
 
             HorizontalSpacerBase2x()
 
@@ -129,10 +122,9 @@ fun CardItemContent(match: MatchInfoVo) {
                     .data(match.second_team_logo)
                     .crossfade(true)
                     .build(),
-                placeholder = painterResource(R.drawable.ic_back),
                 contentDescription = "",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.clip(CircleShape).size(24.dp)
+                contentScale = ContentScale.Inside,
+                modifier = Modifier.size(24.dp)
             )
 
             HorizontalSpacerBase2x()
@@ -141,6 +133,7 @@ fun CardItemContent(match: MatchInfoVo) {
                 modifier = Modifier.width(120.dp),
                 maxLines = 2,
                 text = match.second_team!!,
+                textAlign = TextAlign.Center
             )
         }
         Text(

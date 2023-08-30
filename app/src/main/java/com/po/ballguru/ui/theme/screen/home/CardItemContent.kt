@@ -3,7 +3,6 @@ package com.po.ballguru.ui.theme.screen.home
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,9 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -29,7 +26,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
@@ -40,12 +36,9 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.po.ballguru.R
 import com.po.ballguru.ui.theme.common.HorizontalSpacerBase2x
+import com.po.ballguru.ui.theme.common.HorizontalSpacerSmall
 import com.po.ballguru.ui.theme.common.MatchInfoVo
 import com.po.ballguru.ui.theme.resources.dimen
 
@@ -111,11 +104,11 @@ fun CardItemContent(match: MatchInfoVo) {
                 modifier = Modifier.size(24.dp)
             )
 
-            HorizontalSpacerBase2x()
+            HorizontalSpacerSmall()
 
             Text(text = "Vs")
 
-            HorizontalSpacerBase2x()
+            HorizontalSpacerSmall()
 
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
@@ -172,12 +165,14 @@ fun CardItemContent(match: MatchInfoVo) {
             }
         )
         Image(
+            painter = painterResource(id = R.drawable.football),
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .size(MaterialTheme.dimen.base_6x)
-                .padding(MaterialTheme.dimen.base),
-            painter = painterResource(id = R.drawable.football),
-            contentDescription = "logo"
+                .size(MaterialTheme.dimen.base_5x)
+                .padding(MaterialTheme.dimen.base)
+                .clip(shape = CircleShape),
+            contentDescription = "logo",
+            contentScale = ContentScale.Inside
         )
         Column(
             modifier = Modifier
@@ -202,13 +197,14 @@ fun CardItemContent(match: MatchInfoVo) {
 }
 
 
-
 @Composable
 @Preview(showBackground = true)
 fun CardItemContentPreview() {
-    Surface(modifier = Modifier
-        .fillMaxWidth()
-        .height(200.dp)) {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(200.dp)
+    ) {
         CardItemContent(
             match = MatchInfoVo(
                 "Premier League",

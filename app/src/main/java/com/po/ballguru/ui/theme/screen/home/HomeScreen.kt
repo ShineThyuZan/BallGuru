@@ -55,7 +55,6 @@ fun HomeScreen(
                             .padding(end = MaterialTheme.dimen.base)
                             .clickable {
                                 navController.navigate(Destination.News.route)
-
                             },
                         text = "News",
                     )
@@ -64,7 +63,7 @@ fun HomeScreen(
                     Icon(
                         modifier = Modifier.size(MaterialTheme.dimen.base_8x),
                         painter = painterResource(id = R.drawable.logo),
-                        contentDescription = "logo"
+                        contentDescription = "logo",
                     )
                 }
             )
@@ -85,7 +84,7 @@ fun HomeScreen(
                 Box(
                     Modifier
                         .fillMaxWidth()
-                        .weight(2f)) {
+                        .weight(2.5f)) {
                     CardItemForAds()
                 }
                 Box(
@@ -96,7 +95,7 @@ fun HomeScreen(
                 }
                 BannerAds(modifier = Modifier
                     .padding(MaterialTheme.dimen.base)
-                    .fillMaxWidth()
+                    .fillMaxSize()
                     .weight(2f))
             }
         }

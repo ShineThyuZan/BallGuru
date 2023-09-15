@@ -24,6 +24,7 @@ import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.ktx.isFlexibleUpdateAllowed
 import com.google.android.play.core.ktx.isImmediateUpdateAllowed
+import com.google.firebase.FirebaseApp
 import com.po.ballguru.ui.theme.resources.BallGuruTheme
 import com.po.ballguru.ui.theme.screen.MainScreen
 import kotlinx.coroutines.delay
@@ -38,6 +39,7 @@ class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+     /*   FirebaseApp.initializeApp(this)*/
         /** Check playStore app update*/
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
         if(updateType == AppUpdateType.FLEXIBLE){
@@ -46,6 +48,7 @@ class MainActivity : ComponentActivity() {
         checkForAppUpdate()
         /** Ads show */
         MobileAds.initialize(this)
+        FirebaseApp.initializeApp(this)
         adView = AdView(this)
         adView.setAdSize(AdSize.BANNER)
         adView.adUnitId = "ca-app-pub-6403106238282709/3513120702"

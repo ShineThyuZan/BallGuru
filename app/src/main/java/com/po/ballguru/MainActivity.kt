@@ -52,6 +52,7 @@ class MainActivity : ComponentActivity() {
         adView = AdView(this)
         adView.setAdSize(AdSize.BANNER)
         adView.adUnitId = "ca-app-pub-6403106238282709/3513120702"
+       /* adView.adUnitId = "ca-app-pub-6403106238282709/3066221504"*/
 
         setContent {
             BallGuruTheme {

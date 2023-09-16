@@ -94,7 +94,7 @@ fun HomeScreen(
                     SetFireBaseData(viewModel)
                 }
                 BannerAds(modifier = Modifier
-                    .padding(MaterialTheme.dimen.base)
+                  /*  .padding(MaterialTheme.dimen.base)*/
                     .fillMaxSize()
                     .weight(2f))
             }

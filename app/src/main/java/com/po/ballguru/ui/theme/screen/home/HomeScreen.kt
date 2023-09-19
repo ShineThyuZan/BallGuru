@@ -79,7 +79,6 @@ fun HomeScreen(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(bottom = MaterialTheme.dimen.base_2x)
             ) {
                 Box(
                     Modifier

@@ -39,10 +39,10 @@ class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-     /*   FirebaseApp.initializeApp(this)*/
+        /*   FirebaseApp.initializeApp(this)*/
         /** Check playStore app update*/
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
-        if(updateType == AppUpdateType.FLEXIBLE){
+        if (updateType == AppUpdateType.FLEXIBLE) {
             appUpdateManager.registerListener(installUpdatedListener)
         }
         checkForAppUpdate()
@@ -51,8 +51,8 @@ class MainActivity : ComponentActivity() {
         FirebaseApp.initializeApp(this)
         adView = AdView(this)
         adView.setAdSize(AdSize.BANNER)
-        adView.adUnitId = "ca-app-pub-6403106238282709/3513120702"
-       /* adView.adUnitId = "ca-app-pub-6403106238282709/3066221504"*/
+        adView.adUnitId = "ca-app-pub-6403106238282709/3066221504"
+        /* adView.adUnitId = "ca-app-pub-6403106238282709/3513120702"*/
 
         setContent {
             BallGuruTheme {
@@ -75,7 +75,7 @@ class MainActivity : ComponentActivity() {
                 "Download successful. Restarting app in 5 seconds.",
                 Toast.LENGTH_LONG
             ).show()
-            lifecycleScope.launch{
+            lifecycleScope.launch {
                 delay(5.seconds)
                 appUpdateManager.completeUpdate()
             }
@@ -129,7 +129,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        if(updateType== AppUpdateType.FLEXIBLE){
+        if (updateType == AppUpdateType.FLEXIBLE) {
             appUpdateManager.unregisterListener(installUpdatedListener)
         }
     }

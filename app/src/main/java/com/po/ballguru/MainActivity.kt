@@ -25,8 +25,12 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.ktx.isFlexibleUpdateAllowed
 import com.google.android.play.core.ktx.isImmediateUpdateAllowed
 import com.google.firebase.FirebaseApp
+import com.onesignal.OneSignal
+import com.onesignal.debug.LogLevel
 import com.po.ballguru.ui.theme.resources.BallGuruTheme
 import com.po.ballguru.ui.theme.screen.MainScreen
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
@@ -36,9 +40,25 @@ class MainActivity : ComponentActivity() {
     private lateinit var appUpdateManager: AppUpdateManager
     private val updateType = AppUpdateType.FLEXIBLE
 
+    // oneSignal push notification
+    private val ONESIGNAL_APP_ID = "7de98363-f334-4e39-8f87-44f7952d63d9"
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /** OneSignal push notification service*/
+        OneSignal.Debug.logLevel = LogLevel.VERBOSE
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this, ONESIGNAL_APP_ID)
+
+        // requestPermission will show the native Android notification permission prompt.
+        // NOTE: It's recommended to use a OneSignal In-App Message to prompt instead.
+        CoroutineScope(Dispatchers.IO).launch {
+            OneSignal.Notifications.requestPermission(true)
+        }
+
+
         /*   FirebaseApp.initializeApp(this)*/
         /** Check playStore app update*/
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
@@ -46,6 +66,7 @@ class MainActivity : ComponentActivity() {
             appUpdateManager.registerListener(installUpdatedListener)
         }
         checkForAppUpdate()
+
         /** Ads show */
         MobileAds.initialize(this)
         FirebaseApp.initializeApp(this)

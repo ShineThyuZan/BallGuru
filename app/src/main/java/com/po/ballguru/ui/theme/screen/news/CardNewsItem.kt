@@ -58,7 +58,7 @@ fun CardNewsItem(news: NewsVo) {
             append(news.content!!)
             withStyle(
                 style = SpanStyle(
-                    color = MaterialTheme.colorScheme.surface,
+                    color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 14.sp
                 )
             ) {
@@ -109,7 +109,6 @@ fun CardNewsItem(news: NewsVo) {
             Text(
                 text = news.title!!,
                 style = MaterialTheme.typography.titleLarge,
-                color = Color.Black,
                 maxLines = 3,
             )
             VerticalSpacerBase()
@@ -139,7 +138,7 @@ fun CardNewsItem(news: NewsVo) {
             VerticalSpacerBase2x()
             ClickableText(
                 text = annotatedText,
-                style = (MaterialTheme.typography.bodyMedium.copy(textAlign = TextAlign.Start)),
+                style = (MaterialTheme.typography.bodyMedium.copy(textAlign = TextAlign.Start).copy(color = MaterialTheme.colorScheme.onSurface)),
                 maxLines = if (isExpanded) Int.MAX_VALUE else 3,
                 onTextLayout = { textLayoutResultState = it },
                 onClick = { offset ->

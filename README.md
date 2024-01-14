@@ -18,6 +18,7 @@
 - [Firebase Cloud Storage](https://firebase.google.com/docs/storage)
 - [Coil](https://github.com/coil-kt/coil)
 - [Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
+- [One Singnal Push Notification](https://onesignal.com)
 
 ## How to run BallGuru app in Android Studio?
 - Clone project with [this link](https://github.com/ShineThyuZan/BallGuru.git)

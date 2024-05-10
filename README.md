@@ -1,7 +1,8 @@
 # BallGuru Application
-+ BallGuru App is for live football streaming for updated matches and can see updated soccer news.
-+ In the first Screen include Google ads skip sample video link and the user can watch easily when pressing the link.
-+ Include two screens, first for live games with time, prediction and watch link. Second to read player transfer news, UEFA teams information, and other content.
++ The BallGuru App offers live football streaming for up-to-date matches and provides users with the latest soccer news.
++ The initial screen features Google ads, a skip option, and a sample video link, allowing users to easily access live streams by simply tapping the link. 
++ The app comprises two main screens: the first displays live games along with match times, predictions, and watch links for convenient viewing. 
++ On the second screen, users can access player transfer news, UEFA team information, and additional content related to the football world.
 
 ## Tech
 

@@ -3,6 +3,7 @@ package com.po.ballguru.ui.theme.screen.home
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -21,8 +22,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import coil.size.Dimension
 import com.po.ballguru.R
 import com.po.ballguru.ui.theme.common.MatchesDataState
 import com.po.ballguru.ui.theme.graph.Destination
@@ -57,14 +62,16 @@ fun HomeScreen(
                                 navController.navigate(Destination.News.route)
                             },
                         text = "News",
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.Bold
                     )
                 },
                 navigationIcon = {
-                    Icon(
-                        modifier = Modifier.size(MaterialTheme.dimen.base_8x),
-                        painter = painterResource(id = R.drawable.logo),
-                        contentDescription = "logo",
-                    )
+                    Column(modifier = Modifier.padding(start = MaterialTheme.dimen.base).clickable{
+                        navController.navigate(Destination.About.route)
+                    },) {
+                        Text(text = "About Us", color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
+                    }
                 }
             )
         },
@@ -83,7 +90,7 @@ fun HomeScreen(
                 Box(
                     Modifier
                         .fillMaxWidth()
-                        .weight(2.5f)) {
+                        .weight(2f)) {
                     CardItemForAds()
                 }
                 Box(
@@ -92,10 +99,18 @@ fun HomeScreen(
                         .weight(14f)) {
                     SetFireBaseData(viewModel)
                 }
-                BannerAds(modifier = Modifier
-                  /*  .padding(MaterialTheme.dimen.base)*/
-                    .fillMaxSize()
-                    .weight(2f))
+
+                Box(
+                    Modifier
+                        .fillMaxWidth()
+                        .weight(2f)) {
+                    CardItemFor1X()
+                }
+//                BannerAds(modifier = Modifier
+//                  /*  .padding(MaterialTheme.dimen.base)*/
+//                    .fillMaxSize()
+//                    .weight(2f))
+
             }
         }
     }

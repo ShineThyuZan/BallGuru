@@ -41,7 +41,7 @@ fun NewsScreen(
                             .fillMaxWidth(1f),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = "News")
+                        Text(text = "News", color = MaterialTheme.colorScheme.primary)
                     }
                 },
                 actions = {

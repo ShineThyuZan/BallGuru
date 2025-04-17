@@ -25,7 +25,7 @@ fun CardItemForAds() {
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    val url = "https://1xlite-333050.top/en"
+                    val url = "https://myanmarsports.net"
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                     intent
                         .resolveActivity(context.packageManager)
@@ -83,7 +83,7 @@ fun CardItemFor1X() {
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    val url = "https://1xlite-333050.top/en"
+                    val url = "https://myanmarsports.net"
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                     intent
                         .resolveActivity(context.packageManager)

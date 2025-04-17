@@ -65,7 +65,7 @@ fun AboutScreen(
 
                 InfoItem(label = "Phone Number", value = "+66 080 584 5236")
                 InfoItem(label = "Email", value = "thineshue@gmail.com")
-                InfoItem(label = "App Version", value = "2.0v")
+                InfoItem(label = "App Version", value = "1.5")
             }
         })
 }
